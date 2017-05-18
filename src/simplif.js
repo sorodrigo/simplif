@@ -31,6 +31,7 @@ const Simplif = (collection, callback, flag) => {
     if (type === 'object') return Object.keys(collection).map(key => ({ [key]: !!collection[key] }));
     return collection.map(item => (!!item));
   }
+  return undefined;
 };
 
 export default Simplif;
