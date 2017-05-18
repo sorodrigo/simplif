@@ -1,29 +1,29 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import babel from  'rollup-plugin-babel';
+import eslint from 'rollup-plugin-eslint';
+import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
-import { main, module, dependencies } from './package.json';
-
-const external = Object.keys(dependencies);
+import json from 'rollup-plugin-json';
 
 export default {
-  entry: 'simplif.js',
+  entry: 'src/simplif.js',
   format: 'umd',
   plugins: [
     commonjs(),
     resolve(),
-    babel(babelrc())
+    json(),
+    eslint(),
+    babel(babelrc({ addModuleOptions: false }))
   ],
-  external: external,
   targets: [
     {
-      dest: main,
+      dest: 'dist/simplif.js',
       format: 'umd',
       moduleName: 'simplif',
       sourceMap: true
     },
     {
-      dest: module,
+      dest: 'dist/simplif.mjs',
       format: 'es',
       sourceMap: true
     }
