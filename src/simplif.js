@@ -23,12 +23,25 @@ const Simplif = (collection, callback, flag = { silent: true }) => {
   if (!COLLECTIONS.includes(type)) {
     !!collection === true && typeof callback === 'function' && callback();
   } else {
-    const condition = collection.reduce((previous, current) => (previous && current), true);
+    let condition;
+    if (type === 'array') {
+      condition = collection.reduce((previous, current) => (previous && current), true);
+    }
+    if (type === 'object') {
+      condition = Object.keys(collection)
+        .reduce((previous, current) => collection[previous] && collection[current], true);
+    }
     condition && typeof callback === 'function' && callback();
   }
 
   if (!flag.silent) {
-    if (type === 'object') return Object.keys(collection).map(key => ({ [key]: !!collection[key] }));
+    if (type === 'object') {
+      const result = {};
+      Object.keys(collection).forEach((key) => {
+        result[key] = !!collection[key];
+      });
+      return result;
+    }
     return collection.map(item => (!!item));
   }
   return undefined;
