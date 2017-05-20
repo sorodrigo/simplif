@@ -1,6 +1,6 @@
 {
   "name": "simplif",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simplify verbose if expressions",
   "main": "simplif.js",
   "scripts": {
