@@ -15,7 +15,7 @@ const COLLECTIONS = [
  * an array with the results of each item evaluation is returned.
  * @constructor
  */
-const Simplif = (collection, callback, flag) => {
+const Simplif = (collection, callback, flag = { silent: true }) => {
   let type;
   if (Array.isArray(collection)) type = 'array';
   else type = typeof collection;
