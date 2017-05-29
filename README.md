@@ -12,10 +12,26 @@ $ npm i -S simplif
 ```
 
 ## Usage
+
 ```
 import { simplif as sif } from 'simplif';
--
+
+// Arrays
 sif([pouredSalt, waterBoiling, pouredPasta, timeInWater > 8], () => {
+  /* takes out spaghetti */
+  /* serves plate */
+  /* pours bolognesa */
+});
+
+// Objects
+const spaghetti = {
+  pouredSalt: true,
+  waterBoiling: true,
+  pouredPasta: true,
+  timeInWater: totalTime > 8
+};
+
+sif(spaghetti, () => {
   /* takes out spaghetti */
   /* serves plate */
   /* pours bolognesa */
