@@ -4,39 +4,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var defineProperty = function (obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-};
-
 /**
  * Constant containing all accepted collection types
  * @type {[string]}
@@ -51,23 +18,37 @@ var COLLECTIONS = ['object', 'array'];
  * an array with the results of each item evaluation is returned.
  * @constructor
  */
-var Simplif = function Simplif(collection, callback, flag) {
+var simplif = function simplif(collection, callback) {
+  var flag = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : { silent: false };
+
   var type = void 0;
   if (Array.isArray(collection)) type = 'array';else type = typeof collection === 'undefined' ? 'undefined' : _typeof(collection);
 
   if (!COLLECTIONS.includes(type)) {
     !!collection === true && typeof callback === 'function' && callback();
   } else {
-    var condition = collection.reduce(function (previous, current) {
-      return previous && current;
-    }, true);
+    var condition = void 0;
+    if (type === 'array') {
+      condition = collection.reduce(function (previous, current) {
+        return previous && current;
+      }, true);
+    }
+    if (type === 'object') {
+      condition = Object.keys(collection).reduce(function (previous, current) {
+        return collection[previous] && collection[current];
+      }, true);
+    }
     condition && typeof callback === 'function' && callback();
   }
 
   if (!flag.silent) {
-    if (type === 'object') return Object.keys(collection).map(function (key) {
-      return defineProperty({}, key, !!collection[key]);
-    });
+    if (type === 'object') {
+      var result = {};
+      Object.keys(collection).forEach(function (key) {
+        result[key] = !!collection[key];
+      });
+      return result;
+    }
     return collection.map(function (item) {
       return !!item;
     });
@@ -75,5 +56,7 @@ var Simplif = function Simplif(collection, callback, flag) {
   return undefined;
 };
 
-export default Simplif;
+var simplif$1 = { simplif: simplif };
+
+export default simplif$1;
 //# sourceMappingURL=simplif.mjs.map
