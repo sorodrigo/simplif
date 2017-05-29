@@ -1,7 +1,7 @@
 {
   "name": "simplif",
   "version": "0.1.2",
-  "description": "Simplify verbose if expressions",
+  "description": "Simplify verbose if statements",
   "main": "simplif.js",
   "scripts": {
     "build": "rollup -c",
@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "precommit": "npm run lint",
     "commitmsg": "validate-commit-msg",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-stage-3": "^6.24.1",
     "babelrc-rollup": "^3.0.0",
+    "conventional-changelog-cli": "^1.3.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
@@ -42,7 +43,6 @@
     "rollup-plugin-json": "^2.1.1",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^3.2.2",
-    "semantic-release": "^6.3.6",
     "validate-commit-msg": "^2.12.1"
   },
   "browserslist": [
