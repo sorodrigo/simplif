@@ -1,11 +1,7 @@
 <a name="0.2.0"></a>
 # 0.2.0 (2017-05-29)
 
-* builds dist ([173963e](https://github.com/sorodrigo/simplif/commit/173963e))
-* bumps version ([10e7f63](https://github.com/sorodrigo/simplif/commit/10e7f63))
-* Initial commit ([b56acb4](https://github.com/sorodrigo/simplif/commit/b56acb4))
 * Update README.md ([fb7c5ab](https://github.com/sorodrigo/simplif/commit/fb7c5ab))
-
 
 
 
