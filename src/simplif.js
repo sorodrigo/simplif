@@ -47,4 +47,4 @@ const simplif = (collection, callback, flag = { silent: false }) => {
   return undefined;
 };
 
-export default { simplif };
+export default simplif;

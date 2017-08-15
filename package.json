@@ -8,6 +8,7 @@
     "dev": "rollup -c -w",
     "lint": "eslint .",
     "precommit": "npm run lint",
+    "prepublish": "npm run lint && npm run build",
     "commitmsg": "validate-commit-msg",
     "changelog": "conventional-changelog -i CHANGELOG.md -s"
   },

@@ -6,7 +6,7 @@ import babelrc from 'babelrc-rollup';
 import json from 'rollup-plugin-json';
 
 export default {
-  entry: 'src/simplif.js',
+  entry: 'src/index.js',
   format: 'umd',
   plugins: [
     commonjs(),
@@ -17,13 +17,13 @@ export default {
   ],
   targets: [
     {
-      dest: 'dist/simplif.js',
+      dest: 'lib/index.js',
       format: 'umd',
       moduleName: 'simplif',
       sourceMap: true
     },
     {
-      dest: 'dist/simplif.mjs',
+      dest: 'lib/index.js',
       format: 'es',
       sourceMap: true
     }
