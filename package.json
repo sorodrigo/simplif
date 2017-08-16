@@ -2,7 +2,7 @@
   "name": "simplif",
   "version": "1.0.0-0",
   "description": "Simplify verbose if statements",
-  "main": "simplif.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

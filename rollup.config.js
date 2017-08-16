@@ -23,7 +23,7 @@ export default {
       sourceMap: true
     },
     {
-      dest: 'lib/index.js',
+      dest: 'lib/index.mjs',
       format: 'es',
       sourceMap: true
     }
