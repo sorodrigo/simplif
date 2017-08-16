@@ -1,6 +1,6 @@
 {
   "name": "simplif",
-  "version": "1.0.0-0",
+  "version": "1.0.1-0",
   "description": "Simplify verbose if statements",
   "main": "lib/index.js",
   "scripts": {
