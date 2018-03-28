@@ -1,4 +1,6 @@
 # simplif
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sorodrigo/simplif.svg)](https://greenkeeper.io/)
 > Clean, debuggable solution to verbose if statements
 
 ## Installation
